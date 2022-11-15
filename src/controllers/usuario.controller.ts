@@ -84,11 +84,13 @@ export class UsuarioController {
     usuario.password = claveCifrada;
 
     let tipo = '';
-    tipo = configuracion.tipoComunicacion; //Definimos el tipo de comunicacion
+    tipo = configuracion.tipoComunicacion;
+
+    //Definimos el tipo de comunicacion
     let servicioWeb = '';
     let destino = '';
 
-    if (tipo == "sms") {
+    if (tipo == "") {
       destino = usuario.telefono;
       servicioWeb = 'send_sms';
     } else {
